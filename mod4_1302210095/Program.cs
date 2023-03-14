@@ -52,6 +52,16 @@ internal class Program
         Console.Write(KodeBuah.Buah.Durian + ": ");
         Console.WriteLine(etalase.getKodeBuah(KodeBuah.Buah.Durian));
 
+        PosisiKarakterGame playerAction = new PosisiKarakterGame();
+        playerAction.currentState = PosisiKarakterGame.KarakterState.Berdiri;
 
+        Console.WriteLine("\nProgram menggerakan karakter");
+        Console.WriteLine("current player state: " + playerAction.currentState);
+        Console.WriteLine();
+
+        playerAction.activeTrigger(PosisiKarakterGame.Trigger.TombolW); //terbang dulu
+        playerAction.activeTrigger(PosisiKarakterGame.Trigger.TombolX); //landing dulu
+        playerAction.activeTrigger(PosisiKarakterGame.Trigger.TombolW); //berdiri dulu
+        playerAction.activeTrigger(PosisiKarakterGame.Trigger.TombolW); //terbang lagi
     }
 }
